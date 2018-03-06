@@ -1,0 +1,19 @@
+html {
+  background:#eee;
+  // overflow: hidden; // overflow hidden breaks native mobile scroll
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  // overflow: hidden;  // overflow hidden breaks native mobile scroll
+  /*-webkit-font-smoothing: subpixel-antialiased;*/
+  color: #111;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body.showMobileNav {
+  max-width: 100vw;
+  max-height: 100vh;
+  // overflow: hidden; // overflow hidden breaks native mobile scroll
+}

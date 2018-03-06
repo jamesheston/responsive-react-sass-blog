@@ -1,0 +1,125 @@
+$laptop_min: 961px;
+$tablet_max: 960px;
+
+.SiteNavWindow {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 50vw;
+  @media (max-width: $tablet_max) {
+    width: 100%;
+    position: initial;
+  }  
+  .topGroup {
+    padding: 0 36px;
+    @media (max-width: $tablet_max) {
+      padding-bottom: 128px;
+    }      
+  }
+
+  .PostSearchInput {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .PostSearchInput input {
+    font-family: 'Open Sans', sans-serif;
+    border: 0;
+    display: flex;
+    font-style: italic;
+    border-radius: 0;
+    background: transparent;
+    font-size: 36px;
+    color: #333;
+    text-align: left;
+    text-indent: 3px;
+    margin-left: -3px;
+    padding-left: 0;
+    max-width: 100%;    
+  } 
+  @media (max-width: 500px) {
+    .PostSearchInput input {
+      font-size: 30px;
+    }      
+  }
+  .PostSearchInput input::-webkit-input-placeholder {
+    color: #D8D8D8;
+  } 
+  .PostSearchInput input:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+
+  .PostList {
+    display: flex;
+    flex-direction: column;
+  }
+  .PostListItem {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #111;
+  }
+  .PostListItem:first-child {
+      margin-top: 0;
+  }
+
+  .PostListItem .row {
+    display: block;
+    width: 100%;
+  } 
+  .PostListItem .col {
+
+  } 
+  .PostListItem .col.date {
+    font-size: 11px;
+    display: inline-block;
+    width: 72px;
+  }           
+  .PostListItem .col.title {
+    display: inline;
+    white-space: pre-wrap;
+    strong {
+      font-weight: bold;
+    }
+  }
+  .PostListItem.active .title {
+    text-decoration: underline;
+  }      
+  .DesktopSiteNav {
+    position: fixed;
+    z-index: 999;    
+    bottom: 0;
+    left: 0;
+    width: 50vw;
+    padding-bottom: 25px;
+    padding-left: 36px;
+    padding-right: 32px;
+    background: #efefef;
+  }
+  @media (max-width: $tablet_max) {
+    .DesktopSiteNav {
+      display: none;
+    }
+  }
+  .DesktopSiteNav a {
+    display: inline-block;
+    border-top: 1px solid transparent;
+    font-size: 15px;
+    margin-left: 24px;
+    padding-bottom: 0;
+    padding-top: 18px;
+  }
+  .DesktopSiteNav a.active {
+    border-top: 1px solid #333;
+  }
+  .DesktopSiteNav a:first-child {
+    margin-left: 0;
+  }
+
+}
+
+

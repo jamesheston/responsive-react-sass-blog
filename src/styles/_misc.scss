@@ -1,0 +1,26 @@
+$laptop_min: 961px;
+$tablet_max: 960px;
+
+.PostPager {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #d0d0d0;
+  align-items: center;
+  padding-bottom: 12px;  
+  margin-top: 48px;
+  margin-bottom: 24px;
+  font-size: 15px;
+  padding-top: 30px;
+  @media (max-width: $tablet_max) {
+    display: none;
+  }
+}
+
+.PostPager a {
+  display: inline-block;
+}
+.PostPager a i {
+}
+.PostPager a span {
+  display: inline-block;
+}

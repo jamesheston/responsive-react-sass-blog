@@ -1,0 +1,124 @@
+$laptop_min: 961px;
+$tablet_max: 960px;
+
+@media (max-width: $tablet_max) {
+
+}
+.MobileNavBar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  left: 0;
+  z-index: 100;
+  background: #eee;
+  height: 48px;  
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  @media (max-width: $tablet_max) {
+    display: flex;
+  }
+  // post detail view ( prev post, next post )
+  // site nav view ( posts, about )
+  .navLink {
+    font-size: 12px;
+    width: 80px;
+  }
+  .navLink.r {
+    text-align: right;
+  }
+  .navLink i {
+    display: inline-block;
+  }
+  .navLink span {
+
+  }
+  .navLink.siteNav i {
+    height: 5px;
+    width: 5px;
+    border-radius:100%;
+    border: 1px solid #000;
+    background: transparent;
+    margin-right: 6px;
+  }
+  .navLink.siteNav.active i {
+    background:#000;
+  }
+  .navLink.siteNav.r i {
+    margin-left: 6px;
+  }
+}
+// Hamburger
+
+.hamburger {
+  font: inherit;
+  display: inline-block;
+  overflow: visible;
+  margin: 0;
+  // padding: 15px;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-duration: .15s;
+  transition-property: opacity,filter;
+  text-transform: none;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
+  /*box-sizing: border-box;*/
+}
+.hamburger-box {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  position: absolute;
+  width: 31px;
+  height: 3px;
+  transition-timing-function: ease;
+  transition-duration: .15s;
+  transition-property: transform;
+  border-radius: 0px;
+  background-color: #111;
+}
+.MobileNavBar[data-is-open="true"] { .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  height: 5px;
+} }
+.hamburger-inner::before, .hamburger-inner::after {
+  display: block;
+  content: "";
+}
+.hamburger-inner {
+  background-color: #000;
+  transition-timing-function: cubic-bezier(.55,.055,.675,.19);
+  transition-duration: 75ms;
+  top: 50%;
+  display: block;
+  margin-top: -2px;
+}
+.hamburger-inner::before {
+  top: -8px;
+  transition: top 75ms ease .12s,opacity 75ms ease;
+}
+.hamburger-inner::after {
+  bottom: -8px;
+  transition: bottom 75ms ease .12s,transform 75ms cubic-bezier(.55,.055,.675,.19);
+}
+
+.MobileNavBar[data-is-open="true"] .hamburger-inner {
+  transition-delay: .12s;
+  transition-timing-function: cubic-bezier(.215,.61,.355,1);
+  transform: rotate(45deg);
+}
+.MobileNavBar[data-is-open="true"] .hamburger-inner::before {
+  top: 0;
+  transition: top 75ms ease,opacity 75ms ease .12s;
+  opacity: 0;
+}
+.MobileNavBar[data-is-open="true"] .hamburger-inner::after {
+  bottom: 0;
+  transition: bottom 75ms ease,transform 75ms cubic-bezier(.215,.61,.355,1) .12s;
+  transform: rotate(-90deg);
+}

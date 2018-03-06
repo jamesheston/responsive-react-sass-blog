@@ -1,0 +1,112 @@
+
+
+// Let's aim for just 1 breakpoint: 960px
+// * 961px and up styles are for laptop / desktop.
+// * 960px on down is for tablets and phones.
+// I'm desgining for laptop first, so the default
+// rules will be for screens 961px or wider.
+// Most media queries that are added will be
+// for screen widths narrower than 960px.
+$laptop_min: 961px;
+$tablet_max: 960px;
+
+
+.pageLayoutA {
+
+}
+@media (max-width: $tablet_max) {
+
+}
+.pageLayoutA .pageRow {
+  display: flex;
+  flex-direction: row;  
+}
+.pageLayoutA .pageColA {
+  width: 50vw;
+  height: 100vh;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: flex-start;
+  @media (max-width: $tablet_max) {
+    width:100vw;
+    display: none;
+  } 
+}
+.pageLayoutA[data-mobile-view='colA'] .pageColA {
+  @media (max-width: $tablet_max) {
+    display: flex;
+  }
+} 
+.pageLayoutA .pageColB {
+  position: relative;
+  z-index: 0;
+  height: 100vh;
+  width: 50vw;  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-right: 36px;
+  @media (max-width: $tablet_max) {
+    display: block;
+    width: 100%;
+    padding-top: 0;
+    padding-right: 24px;
+    padding-bottom: 48px;
+    padding-left: 24px;
+  }
+}
+.pageLayoutA[data-mobile-view='colA'] .pageColB {
+  @media (max-width: $tablet_max) {
+    display: none;
+  }
+} 
+
+
+.pageLayoutA .pageColB .postContentWindow {
+  width: 100%;
+  max-width: 596px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (max-width: $tablet_max) {
+    max-width: 100%;
+  }
+
+}
+
+.pageLayoutA[data-template='about'] {
+  .pageColB {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .pageColB .postContentWindow {
+    height: auto;
+    justify-content: center;
+    @media (max-width: $tablet_max) {
+      align-items: center;
+    }
+  }
+  .PostContent {
+    text-align: center;
+    max-width: 480px;
+    @media (max-width: $tablet_max) {
+      max-width: 340px;
+      // padding-top: 48px; 
+      margin: 0;
+      padding: 0;   
+      border-bottom: 0;      
+    }
+  }  
+  img.githubSvg {
+    opacity: 0.83;
+  }
+}
